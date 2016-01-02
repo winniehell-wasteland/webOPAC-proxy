@@ -31,7 +31,7 @@ function HelloCtrl ($scope, $reactive) {
                 return
             }
 
-            vm.serverMessage = 'Server message is: ' + result
+            vm.serverMessage = result
         })
     }
 }

@@ -1,4 +1,21 @@
-<p>Hello from client!</p>
-<p>{{ hello.serverMessage }}</p>
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Hello from client!</span>
+        </md-card-title-text>
+    </md-card-title>
+</md-card>
 
-<button ng-click="hello.loadMessage()">Click me!</button>
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Message from server</span>
+            <span class="md-subhead">{{ hello.serverMessage }}</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-primary"
+                   ng-click="hello.loadMessage()">Click me!
+        </md-button>
+    </md-card-actions>
+</md-card>
