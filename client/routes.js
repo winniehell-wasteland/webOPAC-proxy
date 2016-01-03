@@ -16,6 +16,10 @@ function configureRoutes ($urlRouterProvider, $stateProvider, $locationProvider)
             url: '/hello',
             template: '<hello></hello>'
         })
+        .state('search', {
+            url: '/search',
+            template: '<search-field></search-field>'
+        })
 
-    $urlRouterProvider.otherwise('/hello')
+    $urlRouterProvider.otherwise('/search')
 }

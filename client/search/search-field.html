@@ -1,0 +1,12 @@
+<md-autocomplete
+        md-selected-item="searchField.selectedItem"
+        md-search-text="searchField.searchText"
+        md-items="item in searchField.runSearch(searchField.searchText)"
+        md-item-text="item.title"
+        md-min-length="0"
+        md-floating-label="Favorite number">
+    <md-item-template>
+        <span md-highlight-text="searchField.searchText" md-highlight-flags="^i">{{item.title}}</span>
+    </md-item-template>
+    <md-not-found>No number found!</md-not-found>
+</md-autocomplete>
