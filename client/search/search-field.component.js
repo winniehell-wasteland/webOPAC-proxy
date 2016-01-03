@@ -24,34 +24,24 @@ function SearchFieldCtrl ($scope, $reactive) {
     selectedItem: 0
   })
 
-  vm.numbers = [
-    {title: 'One'},
-    {title: 'Two'},
-    {title: 'Three'},
-    {title: 'Four'},
-    {title: 'Five'},
-    {title: 'Six'},
-    {title: 'Seven'},
-    {title: 'Eight'},
-    {title: 'Nine'}
-  ]
   vm.runSearch = runSearch
 
   function runSearch (query) {
-    console.log('searching for ' + query)
-    if (!query) {
-      return vm.numbers
+    var promise = new Promise((fulfill, reject) => {
+      Meteor.call('findNumber', query, (error, results) => {
+        if (error) {
+          return reject(error)
+        }
+
+        fulfill(results)
+      })
+    })
+
+    // workaround for https://github.com/angular/material/pull/6521
+    if (!promise.finally) {
+      promise.finally = promise.then
     }
 
-    var results = vm.numbers.filter(createFilterFor(query))
-    return results
-  }
-
-  function createFilterFor (query) {
-    var lowercaseQuery = angular.lowercase(query)
-    console.log('filter for ' + lowercaseQuery)
-    return function filterFn (number) {
-      return (angular.lowercase(number.title).indexOf(lowercaseQuery) > -1)
-    }
+    return promise
   }
 }
