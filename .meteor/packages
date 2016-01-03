@@ -19,3 +19,8 @@ insecure                # Allow all DB writes from clients (for prototyping)
 angular
 angularui:angular-ui-router
 angular:angular-material
+ciwolsey:superagent
+meteorhacks:npm
+
+
+npm-container
