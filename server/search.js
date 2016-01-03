@@ -17,7 +17,6 @@ var NUMBERS = [
 ]
 
 function findNumber (query) {
-  console.log(query)
   var results
 
   if (query) {
@@ -28,7 +27,6 @@ function findNumber (query) {
 
   results = results.slice(0, NUM_MAX_RESULTS)
 
-  console.log(results.length + ' results')
   return results
 }
 
