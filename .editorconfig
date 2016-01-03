@@ -1,0 +1,7 @@
+[*.{css,html,js}]
+charset = utf-8
+indent_style = space
+indent_size = 2
+
+[*.js]
+spaces_around_brackets = outside

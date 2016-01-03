@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "standard"
+  ],
+  "env": {
+    "es6": true,
+    "meteor": true
+  },
+  "globals": {
+    "angular": false
+  }
+}

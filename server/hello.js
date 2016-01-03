@@ -1,7 +1,7 @@
 Meteor.methods({
-    'loadMessage': loadMessage
+  'loadMessage': loadMessage
 })
 
-function loadMessage() {
-    return 'Hello from server!'
+function loadMessage () {
+  return 'Hello from server!'
 }
